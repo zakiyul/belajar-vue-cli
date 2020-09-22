@@ -1,7 +1,10 @@
 <template>
-  <ul>
-    <li v-for="weapon in weapons">{{weapon}}</li>
-  </ul>
+  <div>
+    <h3>List of weapons</h3>
+    <ol>
+      <li v-for="weapon in weapons">{{weapon}}</li>
+    </ol>
+  </div>
 </template>
 <script>
 export default {
@@ -12,3 +15,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+h3 {
+  color: gold;
+}
+</style>
