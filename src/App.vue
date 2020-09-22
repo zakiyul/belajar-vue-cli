@@ -1,35 +1,30 @@
 <template>
   <div id="app">
-    <h3>{{title}}</h3>
-    <img src="./assets/logo.png" />
-    <p>{{greeting('morning')}}</p>
+    <app-header></app-header>
     <ninjas />
-    <weapons />
+    <app-footer />
   </div>
 </template>
 
 <script>
-import Weapons from "./Weapons.vue";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer";
+import Ninjas from "./components/Ninjas";
 
 export default {
   components: {
-    weapons: Weapons,
+    "app-header": Header,
+    "app-footer": Footer,
+    ninjas: Ninjas,
   },
   data() {
-    return {
-      title: "My First Vue File",
-    };
+    return {};
   },
-  methods: {
-    greeting: (time) => {
-      return `Good ${time}`;
-    },
-  },
+  methods: {},
 };
 </script>
-
 <style>
-h3 {
-  color: purple;
+body {
+  font-family: monospace;
 }
 </style>
