@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <app-header></app-header>
+    <app-header v-bind:title="title" @changeTitle="updateTitle" />
     <ninjas v-bind:ninjas="ninjas" />
-    <app-footer />
+    <button @click="deleteNinja">Delete Ninja</button>
+    <app-footer v-bind:title="title" />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ export default {
   },
   data() {
     return {
+      title: "Vue Ninja",
       ninjas: [
         { name: "Ryu", speciality: "Vue Components", show: false },
         { name: "Crystal", speciality: "HTML Wizardry", show: false },
@@ -29,7 +31,14 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    updateTitle: function (updatedTitle) {
+      this.title = updatedTitle;
+    },
+    deleteNinja: function () {
+      this.ninjas.pop();
+    },
+  },
 };
 </script>
 <style>
