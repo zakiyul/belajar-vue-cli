@@ -1,9 +1,21 @@
 <template>
   <div id="app">
-    <app-header v-bind:title="title" @changeTitle="updateTitle" />
+    <!-- <app-header v-bind:title="title" @changeTitle="updateTitle" />
     <ninjas v-bind:ninjas="ninjas" />
     <button @click="deleteNinja">Delete Ninja</button>
-    <app-footer v-bind:title="title" />
+    <app-footer v-bind:title="title" />-->
+    <form-helper>
+      <div slot="form-header">
+        <h3>Form Header</h3>
+      </div>
+      <div slot="form-fields">
+        <input type="email" required placeholder="Email" />
+        <input type="password" required placeholder="Password" />
+      </div>
+      <div slot="form-controls">
+        <button type="submit" @click="handleSubmit">Submit</button>
+      </div>
+    </form-helper>
   </div>
 </template>
 
@@ -11,12 +23,14 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer";
 import Ninjas from "./components/Ninjas";
+import FormHelper from "./components/FormHelper";
 
 export default {
   components: {
     "app-header": Header,
     "app-footer": Footer,
     ninjas: Ninjas,
+    "form-helper": FormHelper,
   },
   data() {
     return {

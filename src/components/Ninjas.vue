@@ -6,6 +6,8 @@
         <h3 v-show="ninja.show">{{ninja.speciality}}</h3>
       </li>
     </ul>
+    <button @click="click">Methods</button>
+    <button @click="tesComp">Computed</button>
   </div>
 </template>
 <script>
@@ -19,6 +21,33 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    click: function () {
+      console.log("anda menekan click");
+    },
+  },
+  // computed: {
+  //   tesComp: function () {
+  //     return console.log("anda menggunakan computed");
+  //   },
+  // beforeCreate() {
+  //   alert("before create");
+  // },
+  // created() {
+  //   alert("created");
+  // },
+  // beforeMount() {
+  //   alert("before mount");
+  // },
+  // mounted() {
+  //   alert("mounted");
+  // },
+  // beforeUpdate() {
+  //   alert("before update");
+  // },
+  // updated() {
+  //   alert("updated");
+  // },
 };
 </script>
 <style scoped>
